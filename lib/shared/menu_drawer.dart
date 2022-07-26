@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../screens/bmi_screen.dart';
+import '../screens/intro_screen.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({Key? key}) : super(key: key);
@@ -33,12 +35,28 @@ class MenuDrawer extends StatelessWidget {
     );
 
     for (var menuTitle in menuTitles) {
+      Widget screen = Container();
       menuItems.add(
         ListTile(
           title: Text(
             menuTitle,
             style: const TextStyle(fontSize: 18),
           ),
+          onTap: () {
+            switch (menuTitle) {
+              case 'Home':
+                screen = IntroScreen();
+                break;
+              case 'BMI Calculator':
+                screen = BmiScreen();
+                break;
+            }
+            // To hide the drawer when you click
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => screen),
+            );
+          },
         ),
       );
     }
