@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_globo_fitness/screens/intro_screen.dart';
 
 void main() {
   runApp(const GlobeApp());
@@ -10,8 +11,7 @@ class GlobeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        home: Center(
-      child: Text('Hello World'),
-    ));
+      home: IntroScreen(),
+    );
   }
 }
