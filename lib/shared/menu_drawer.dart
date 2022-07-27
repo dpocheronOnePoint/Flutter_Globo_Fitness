@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_globo_fitness/screens/session_screen.dart';
 import 'package:flutter_globo_fitness/screens/weather_screen.dart';
 import '../screens/bmi_screen.dart';
 import '../screens/intro_screen.dart';
@@ -53,6 +54,9 @@ class MenuDrawer extends StatelessWidget {
                 break;
               case 'Weather':
                 screen = const WeatherScreen();
+                break;
+              case 'Trainning':
+                screen = const SessionScreen();
                 break;
             }
             // To hide the drawer when you click
